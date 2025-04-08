@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  const { email, name } = req.body;
+  const { email, name, date ,time ,packagee } = req.body;
 
   if (!email || !name) {
     return res.status(400).json({ message: 'Missing required fields' });
@@ -29,20 +29,20 @@ export default async function handler(req, res) {
     
     <p>Dear <strong>${name}</strong>,</p>
 
-    <p>Thank you for choosing <strong>SMV Super Speciality</strong>. Your appointment has been successfully booked. Here are the details:</p>
+    <p>Thank you for choosing <strong>SMV Super Speciality Hospital</strong>. Your appointment has been successfully booked. Here are the details:</p>
 
     <table style="border-collapse: collapse;">
       <tr>
         <td style="padding: 8px; font-weight: bold;">📅 Date</td>
-        <td style="padding: 8px;">08-04-2025</td>
+        <td style="padding: 8px;">${date}</td>
       </tr>
       <tr>
         <td style="padding: 8px; font-weight: bold;">⏰ Time</td>
-        <td style="padding: 8px;"> 3:00 PM</td>
+        <td style="padding: 8px;">${time}</td>
       </tr>
       <tr>
         <td style="padding: 8px; font-weight: bold;">📦 Selected Package</td>
-        <td style="padding: 8px;">Premium Women package</td>
+        <td style="padding: 8px;">${packagee}</td>
       </tr>
       <tr>
         <td style="padding: 8px; font-weight: bold;">📧 Email:</td>
@@ -55,7 +55,7 @@ export default async function handler(req, res) {
     <p>If you have any questions or need to reschedule, feel free to reply to this email or contact our helpdesk.</p>
 
     <p>Regards,<br/>
-    <strong>[Your Hospital Name]</strong><br/>
+    <strong>SMV Super Speciality Hospital</strong><br/>
     Customer Care Team</p>
 
     <hr/>
