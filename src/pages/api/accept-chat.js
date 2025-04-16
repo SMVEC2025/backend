@@ -1,6 +1,6 @@
 // // /pages/api/accept-room.js
 
-// import supabase from '@/lib/supabase';
+import supabase from '@/lib/supabase';
 // import cors from '@/lib/cors';
 // await cors(req, res); // Enable CORS
 
