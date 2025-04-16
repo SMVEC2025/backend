@@ -1,15 +1,12 @@
-// lib/cors.js
-
 import Cors from 'cors';
 import initMiddleware from './init-middleware';
 
-// You can add more domains in origin array if needed
 const cors = initMiddleware(
   Cors({
-    origin: 'http://localhost:5173', 
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    methods: ['GET', 'POST', 'OPTIONS'],
+    origin: ['http://localhost:5173', 'https://your-frontend-domain.com'],
+    credentials: true,
   })
 );
 
-export default cors;
-
+export default cors;
