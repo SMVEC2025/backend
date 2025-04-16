@@ -3,6 +3,7 @@
 import supabase from '@/lib/supabase';
 import cors from '@/lib/cors';
 await cors(req, res); // Enable CORS
+export default async function handler(req, res) {
 
 if (req.method === 'POST') {
 
@@ -48,4 +49,6 @@ if (req.method === 'POST') {
 
 } else {
   res.status(405).json({ message: 'Method not allowed' });
+}
+
 }
