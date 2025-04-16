@@ -4,8 +4,22 @@ import supabase from '@/lib/supabase';
 import cors from '@/lib/cors';
 
 export default async function handler(req, res) {
-    await cors(req, res);
+  const allowedOrigins = ['http://localhost:5173', 'https://your-frontend.com']; // Add your frontend domain here
+  const origin = req.headers.origin;
 
+  // Allow only whitelisted origins
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    res.status(200).end(); // Respond to preflight
+    return;
+  }
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
