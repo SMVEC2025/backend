@@ -6,7 +6,7 @@ import initMiddleware from './init-middleware';
 // You can add more domains in origin array if needed
 const cors = initMiddleware(
   Cors({
-    origin: '*', // 👈 Allow all origins (unsafe for production)
+    origin: 'http://localhost:5173', 
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   })
 );
