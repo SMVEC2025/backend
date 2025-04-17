@@ -41,13 +41,14 @@ export default async function handler(req, res) {
 
     // ✅ Insert room data into 'room' table
     const { error } = await supabase
-      .from('room')
+      .from('messages')
       .insert([
         {
           room_id: roomId,
-          status: 'pending', // initial status
           name,
           email,
+          content:'Hello! how can i help you today?',
+          sender_type:'agent'
         },
       ]);
 
