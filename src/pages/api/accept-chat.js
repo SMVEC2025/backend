@@ -3,13 +3,14 @@ const supabase = createClient(
   process.env.SUPABASE_URL,
   process.env.SUPABASE_SERVICE_ROLE_KEY
 );
-
 const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:5174',
   'https://smvhospitals.com',
-  'https://smvhospital.vercel.app'
+  'https://smvhospital.vercel.app',
+  '*'
 ];
+
 
 
 export default async function handler(req, res) {

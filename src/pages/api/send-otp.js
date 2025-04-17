@@ -12,8 +12,10 @@ const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:5174',
   'https://smvhospitals.com',
-  'https://smvhospital.vercel.app'
+  'https://smvhospital.vercel.app',
+  '*'
 ];
+
 
 export default async function handler(req, res) {
   const origin = req.headers.origin;
