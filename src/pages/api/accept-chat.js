@@ -1,15 +1,16 @@
 import { createClient } from '@supabase/supabase-js'
-
 const supabase = createClient(
   process.env.SUPABASE_URL,
   process.env.SUPABASE_SERVICE_ROLE_KEY
 );
+
 const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:5174',
-  'https://smvserver.vercel.app',
-  'https://your-frontend-domain.com'
+  'https://smvhospitals.com',
+  'https://smvhospital.vercel.app'
 ];
+
 
 export default async function handler(req, res) {
   const origin = req.headers.origin;
