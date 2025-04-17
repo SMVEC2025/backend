@@ -9,20 +9,15 @@ const supabase = createClient(
 );
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 export default async function handler(req, res) {
-  await cors(req, res); // Enable CORS
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
 
   if (req.method === 'POST') {
 
