@@ -1,3 +1,4 @@
+// lib/cors.js
 import Cors from 'cors';
 import initMiddleware from './init-middleware';
 
@@ -9,4 +10,4 @@ const cors = initMiddleware(
   })
 );
 
-export default cors;
+export default cors;

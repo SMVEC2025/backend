@@ -1,6 +1,12 @@
 import nodemailer from 'nodemailer'
-import supabase from '@/lib/supabase'
-import cors from '@/lib/cors';
+// import supabase from '@/lib/supabase'
+// import cors from '@/lib/cors';
+import { createClient } from '@supabase/supabase-js'
+
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_SERVICE_ROLE_KEY
+);
 
 
 
